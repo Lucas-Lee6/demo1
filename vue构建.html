@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin="anonymous" integrity="sha512-BKbSR+cfyxLdMAsE0naLReFSLg8/pjbgfxHh/k/kUC82Hy7r6HtR5hLhobaln2gcTvzkyyehrdREdjpsQwy2Jw==" src="https://lib.baomitu.com/vue/2.6.12/vue.min.js"></script>
+</head>
+<body>
+    <div id="root">
+        {{message}}
+        <p v-for = "item in list">{{item}}</p>
+        <input type="text" v-model = "inputvalue" />{{inputvalue}}
+        <button v-on:click = "myclick">提交</button>
+    </div>
+    <script type="text/javascript">
+        var wm = new Vue({
+            el:"#root",
+            data: {
+                message:"hello word!",
+                list:["asdasd","dfgdf","jkut"],
+                inputvalue: " "
+            },
+            methods: {
+                myclick:function(){
+                    console.log("hello!!!");
+                }
+            },
+        })
+
+        setTimeout(function() {
+            wm.$data.message ="go away!!"
+        }, 2000);
+    </script>
+</body>
+</html>
